@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html><html lang="tr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="icon" type="image/png" href="resimler/favicon.png?v=2">
+
+    <title>Ad Astra Yapı | Yıldızlara Doğru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet"> projelerimiz kısmında olan 3 adet proje sayısını 15 adete çıkarrt ve ok tuşlaerına bastıkca kaysınn  
+    
+    <style>
+        /* --- Temel Değişkenler ve Reset --- */
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-dark: #AA7C11;
+            --gold-light: #F3E5AB;
+            --bg-white: #FFFFFF;
+            --bg-light: #F9F9F9;
+            --text-dark: #1C1C1C;
+            --text-muted: #666666;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body[dir="rtl"] {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        h1, h2, h3, h4, .brand-name {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+        
+        body[dir="rtl"] h1, body[dir="rtl"] h2, body[dir="rtl"] h3, body[dir="rtl"] h4 {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 1px solid var(--gold-primary);
+            background-color: transparent;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-primary);
+            color: white;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background-color: var(--gold-primary);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 10px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            padding: 15px 0;
+            gap: 20px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo .main-logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .logo .sub-logo {
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold-primary);
+            transition: var(--transition);
+        }
+
+        nav ul a:hover::after,
+        nav ul a.active::after {
+            width: 100%;
+        }
+
+        nav ul a:hover,
+        nav ul a.active {
+            color: var(--gold-primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-email {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .header-email:hover {
+            color: var(--gold-primary);
+        }
+
+        .btn-header-whatsapp {
+            padding: 10px 20px;
+            border: 1px solid var(--gold-primary);
+            background-color: var(--gold-primary);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn-header-whatsapp:hover {
+            background-color: transparent;
+            color: var(--text-dark);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+        }
+
+        .lang-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            list-style: none;
+            min-width: 120px;
+            z-index: 1010;
+        }
+
+        body[dir="rtl"] .lang-dropdown {
+            right: auto;
+            left: 0;
+        }
+
+        .lang-dropdown li {
+            padding: 10px 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .lang-dropdown li:hover {
+            background-color: var(--bg-light);
+            color: var(--gold-primary);
+        }
+
+        .lang-selector:hover .lang-dropdown {
+            display: block;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--gold-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* --- Hakkımızda Bölümü --- */
+        #about {
+            padding: 140px 0;
+            background-color: var(--bg-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px;
+            background-color: var(--bg-white);
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-top: 2px solid var(--gold-primary);
+            border-left: 2px solid var(--gold-primary);
+            z-index: 1;
+        }
+
+        body[dir="rtl"] .about-img::before {
+            left: auto;
+            right: -20px;
+            border-left: none;
+            border-right: 2px solid var(--gold-primary);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        /* --- Öne Çıkan Projeler (Carousel Yapısı) --- */
+        #projects {
+            padding: 140px 0;
+            background-color: var(--bg-white);
+            position: relative;
+        }
+
+        .project-carousel-wrapper {
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .project-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .project-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            flex: 0 0 calc(33.333% - 20px);
+            background: var(--bg-light);
+            border: 1px solid rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .project-img-wrapper {
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .project-info {
+            padding: 30px;
+        }
+
+        .project-info span {
+            font-size: 0.75rem;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55px;
+            height: 55px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--gold-primary);
+            color: white;
+            border-color: var(--gold-primary);
+        }
+
+        .carousel-btn.prev { left: -25px; }
+        .carousel-btn.next { right: -25px; }
+
+        /* --- Vizyon ve Kurumsal Değerler --- */
+        #vision {
+            padding: 140px 0;
+            background: linear-gradient(rgba(28,28,28,0.02), rgba(28,28,28,0.02)), var(--bg-light);
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .vision-card {
+            background-color: var(--bg-white);
+            padding: 50px;
+            border-left: 3px solid var(--gold-primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        body[dir="rtl"] .vision-card {
+            border-left: none;
+            border-right: 3px solid var(--gold-primary);
+        }
+
+        .vision-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        /* --- İletişim Bölümü --- */
+        #contact {
+            padding: 140px 0;
+            background-color: var(--bg-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-form form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid #CCCCCC;
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        body[dir="rtl"] .form-group input, body[dir="rtl"] .form-group textarea {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-bottom: 1px solid var(--gold-primary);
+        }
+
+        .contact-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 30px;
+        }
+
+        .info-item h4 {
+            font-size: 1.1rem;
+            color: var(--gold-dark);
+            margin-bottom: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 200px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 6px;
+            background-color: var(--bg-white);
+            margin-top: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1C1C1C;
+            color: #FFFFFF;
+            padding: 80px 0 30px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo .main-logo {
+            color: #FFFFFF;
+            font-size: 1.8rem;
+        }
+
+        .footer-about p {
+            color: #999999;
+            margin-top: 20px;
+            font-weight: 300;
+            max-width: 400px;
+        }
+
+        .footer-links h4 {
+            color: var(--gold-primary);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links ul a {
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul a:hover {
+            color: var(--gold-primary);
+            padding-left: 5px;
+        }
+        
+        body[dir="rtl"] .footer-links ul a:hover {
+            padding-left: 0;
+            padding-right: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333333;
+            color: #666666;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Tasarım --- */
+        @media (max-width: 1200px) {
+            .nav-container {
+                grid-template-columns: auto 1fr;
+            }
+            .header-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid, .vision-grid, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            nav {
+                display: none;
+            }
+            .project-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+            .carousel-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            .carousel-btn.prev { left: -10px; }
+            .carousel-btn.next { right: -10px; }
+        }
+
+        @media (max-width: 600px) {
+            .project-card {
+                flex: 0 0 100%;
+            }
+            .carousel-btn {
+                display: none;
+            }
+        }
+    </style></head><body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="resimler/logo.png" alt="Ad Astra Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="main-logo">AD ASTRA</span>
+                    <span class="sub-logo" data-key="subLogo">YAPI / ARCHITECTURE</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#hero" class="active" data-key="navHome">Ana Sayfa</a></li>
+                    <li><a href="#about" data-key="navAbout">Kurumsal</a></li>
+                    <li><a href="#projects" data-key="navProjects">Projelerimiz</a></li>
+                    <li><a href="#vision" data-key="navVision">Vizyon</a></li>
+                    <li><a href="#contact" data-key="navContact">İletişim</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="mailto:info@adastrayapi.com" class="header-email">✉ info@adastrayapi.com</a>
+                <a href="#" id="headerWhatsappBtn" class="btn-header-whatsapp" data-key="headerConnectBtn">İletişime Geç</a>
+                
+                <div class="lang-selector">
+                    <button class="lang-btn" id="currentLangBtn">TR ▼</button>
+                    <ul class="lang-dropdown">
+                        <li onclick="changeLanguage('tr')">Türkçe (TR)</li>
+                        <li onclick="changeLanguage('en')">English (EN)</li>
+                        <li onclick="changeLanguage('ar')">العربية (AR)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle" data-key="heroSubtitle">Yıldızlara Doğru Mimari Öyküler</p>
+                <h1 id="heroTitle">Geleceğin Yaşam Alanlarını <span>İnşa Ediyoruz</span></h1>
+                <p data-key="heroDesc">Ad Astra Yapı, lüksün ve estetiğin mükemmel uyumuyla sadece yapılar değil, nesiller boyu değerini koruyacak prestijli yaşam sanatı alanları tasarlar.</p>
+                <a href="#projects" class="btn-gold" data-key="heroBtn">Koleksiyonu Keşfet</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Ad Astra Yapı Ofis">
+                </div>
+                <div class="about-text">
+                    <div class="section-title" style="text-align: initial; margin-bottom: 30px;">
+                        <p data-key="aboutPre">Biz Kimiz?</p>
+                        <h2 style="font-size: 2rem;" data-key="aboutTitle">Zamana Meydan Okuyan Silüetler</h2>
+                    </div>
+                    <p data-key="aboutP1">Çeyrek asırlık köklü geçmişimizle, "Ad Astra" prensibini kendimize kılavuz edindik. Mimaride kusursuz işçilik, elit materyal seçimi ve evrensel mühendislik standartlarını bir araya getiriyoruz.</p>
+                    <p data-key="aboutP2">Her projemizde, beyazın saflığını ve altının asaletini mimari çizgilerimize işleyerek, premium bir yaşam deneyiminin kapılarını aralıyoruz.</p>
+                    <a href="#contact" class="btn-gold" style="margin-top: 20px;" data-key="aboutBtn">Kurumsal Bilgi Al</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <p data-key="projectsPre">Seçkin Portföyümüz</p>
+                <h2 data-key="projectsTitle">Projelerimiz</h2>
+            </div>
+            
+            <div class="project-carousel-wrapper">
+                <button class="carousel-btn prev" id="prevBtn">⟪</button>
+                <div class="project-carousel" id="projectCarousel">
+                    
+                    <div class="project-card" data-tr-sub="Rezidans / İstanbul" data-en-sub="Residence / Istanbul" data-ar-sub="سكن / اسطنبول" data-tr-desc="Şehrin kalbinde, gökyüzüyle birleşen lüks penthouse yaşamı." data-en-desc="Luxury penthouse living merged with the sky, in the heart of the city." data-ar-desc="معيشة بنتهاوس فاخرة مدمجة مع السماء في قلب المدينة.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje1.png" alt="Astra Gold Mansions"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Ürkmez / İzmir</span>
+                            <h3>Rota Life 1</h3>
+                            <p class="p-desc">Doğayla uyumlu mimarisi, özel sosyal alanları ve ayrıcalıklı konumuyla Rota Life 1, prestijli bir yaşamın yeni adresi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Villa / Bodrum" data-en-sub="Villa / Bodrum" data-ar-sub="فيلا / بودروم" data-tr-desc="Denize sıfır, izole ve tamamen akıllı ev donanımlı malikaneler." data-en-desc="Seafront, isolated and fully smart home equipped mansions." data-ar-desc="قصور مواجهة للبحر، معزولة ومجهزة بالكامل بالمنزل الذكي.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje2.png" alt="Stella Marina Villas"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Güllük / Bodrum</span>
+                            <h3>Güllük Yaşam Evleri</h3>
+                            <p class="p-desc">Modern mimarisi, özel bahçe alanları ve huzurlu yaşam anlayışıyla Güllük Yaşam Evleri , Bodrum'un doğal güzellikleri içerisinde ayrıcalıklı bir yaşam sunmaktadır.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Ticari / İzmir" data-en-sub="Commercial / Izmir" data-ar-sub="تجاري / إزمير" data-tr-desc="Uluslararası şirketlerin buluşma noktası olan premium ofis kompleksi." data-en-desc="Premium office complex which is the meeting point of international companies." data-ar-desc="مجمع مكاتب متميز وهو نقطة التقاء الشركات العالمية.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje3.png" alt="Orion Business Tower"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Özdere / İzmir</span>
+                            <h3>Rota Life 2</h3>
+                            <p class="p-desc">Denize ve doğaya yakın konumu, geniş kullanım alanları ve çağdaş mimarisiyle Rota Life 2, yüksek yaşam kalitesini yatırım değeriyle buluşturuyor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Rezidans / İzmir" data-en-sub="Residence / Izmir" data-ar-sub="سكن / إزمير" data-tr-desc="Bornova'nın merkezinde doğayla iç içe modern bir yaşam mimarisi." data-en-desc="Modern living architecture intertwined with nature in the center of Bornova." data-ar-desc="عمارة معيشية حديثة تتشابك مع الطبيعة في وسط بورنوفا.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje4.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Bornova / İzmir</span>
+                            <h3>Doğal Işık ve Modern Yaşam</h3>
+                            <p class="p-desc">Bornova'nın merkezinde doğayla iç içe modern bir yaşam mimarisi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Malikane / Çeşme" data-en-sub="Mansion / Cesme" data-ar-sub="قصر / تشيشمي" data-tr-desc="Ege'nin kristal sularına açılan sonsuzluk havuzlu özel tasarım lüks malikaneler." data-en-desc="Specially designed luxury mansions with infinity pools opening to the crystal waters of Aegean." data-ar-desc="قصور فاخرة مصممة خصيصًا مع حمامات سباحة متناهية تفتح على مياه بحر إيجة الكريستالية.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje5.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Mavisehir / İzmir</span>
+                            <h3>Estetik İç Mekân Çözümleri</h3>
+                            <p class="p-desc">Minimalist tasarım yaklaşımı, sıcak malzeme dokuları ve ferah yaşam alanlarıyla iç mekânlarda modern yaşamın tüm gereksinimlerini estetik bir anlayışla yeniden yorumluyoruz.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Karma Proje / Ankara" data-en-sub="Mixed-Use / Ankara" data-ar-sub="مشروع mixed / أنقرة" data-tr-desc="Başkentte alışveriş, ofis ve elit konut konseptini tek bir kulede birleştiren sanat." data-en-desc="Art combining shopping, office and elite housing concepts in a single tower in the capital." data-ar-desc="الفن يجمع بين مفاهيم التسوق والمكاتب والإسكان النخبوي في برج واحد في العاصمة.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje6.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Zaho / Irak</span>
+                            <h3>Fonksiyonel ve Şık Yaşam Alanları</h3>
+                            <p class="p-desc">İç mekân tasarımında modern mimari yaklaşımı esas alarak, estetik görünüm ve işlevselliği dengeli şekilde bir araya getiren özgün yaşam alanları tasarlıyoruz.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Otel / Antalya" data-en-sub="Hotel / Antalya" data-ar-sub="فندق / أنطاليا" data-tr-desc="Akdeniz sahillerinde 7 yıldızlı konforu minimal mimari ile harmanlayan resort projesi." data-en-desc="Resort project blending 7-star comfort with minimal architecture on the Mediterranean coast." data-ar-desc="مشروع منتجع يمزج بين راحة 7 نجوم والهندسة المعمارية البسيطة على ساحل البحر الأبيض المتوسط.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje7.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Beyşehir / Konya</span>
+                            <h3>Modern İç Mekân Tasarımı</h3>
+                            <p class="p-desc">Kişiye özel tasarlanan yaşam alanları, modern mimari anlayışı ve fonksiyonel detaylarla konforu yeniden tanımlıyor</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Yatay Mimari / Urla" data-en-sub="Low-Rise / Urla" data-ar-sub="عمارة أفقية / أورلا" data-tr-desc="Bağ yolları arasında, tamamen doğal taş işçiliğiyle üretilmiş ekolojik evler." data-en-desc="Ecological houses produced entirely with natural stonework among vineyard paths." data-ar-desc="بيوت بيئية منتجة بالكامل بأعمال الحجر الطبيعي بين مسارات مزارع الكروم.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje8.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Özdere / İzmir</span>
+                            <h3>Bahçe Mimari Çözümleri</h3>
+                            <p class="p-desc">Yaşam alanlarını doğayla bütünleştiren peyzaj uygulamaları, özel bahçe tasarımları ve modern dış mekân düzenlemeleriyle konforlu ve estetik alanlar oluşturuyoruz.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Loft Konut / İstanbul" data-en-sub="Loft Housing / Istanbul" data-ar-sub="مسكن لوفت / اسطنبول" data-tr-desc="Tarihi dokunun modern çelik konstrüksiyonla buluştuğu endüstriyel lüks loftlar." data-en-desc="Industrial luxury lofts where historical texture meets modern steel construction." data-ar-desc="شقق لوفت فاخرة صناعية حيث تلتقي الملمس التاريخي مع الهياكل الفولاذية الحديثة.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje9.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Loft Konut / İstanbul</span>
+                            <h3>Premium İç Mekân Tasarımı</h3>
+                            <p class="p-desc">Tarihi dokunun modern çelik konstrüksiyonla buluştuğu endüstriyel lüks loftlar.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Rezidans / Bursa" data-en-sub="Residence / Bursa" data-ar-sub="سكن / بورصة" data-tr-desc="Uludağ manzarasına hakim, termal altyapılı ve geniş teraslı elit daireler." data-en-desc="Elite apartments with thermal infrastructure and large terraces overlooking Uludag view." data-ar-desc="شقق نخبوية ببنية تحتية حرارية وشرفات واسعة تطل على منظر أولوداغ.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje10.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Rezidans / Bursa</span>
+                            <h3>MODERN BANYO MİMARİSi</h3>
+                            <p class="p-desc">Doğal malzeme dokuları, modern çizgiler ve kaliteli detaylarla tasarlanan banyo alanları; estetik görünümü, fonksiyonelliği ve konforu bir araya getirerek yaşam alanlarına değer katıyor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Villa / Göcek" data-en-sub="Villa / Gocek" data-ar-sub="فيلا / غوجيك" data-tr-desc="Özel tekne iskelesine sahip, çam ormanlarının içinde izole bir yaşam." data-en-desc="An isolated life in pine forests with a private boat pier." data-ar-desc="حياة معزولة في غابات الصنوبر مع رصيف قوارب خاص.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje11.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Eskiizmir / İzmir</span>
+                            <h3>Gökmenoğlu Kuyumculuk</h3>
+                            <p class="p-desc">Marka kimliğine uygun olarak geliştirilen iç mimari tasarım, ürün sergileme alanları ve modern mekân çözümleriyle ziyaretçilere seçkin bir alışveriş deneyimi sunmaktadır.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="İş Merkezi / İstanbul" data-en-sub="Business Center / Istanbul" data-ar-sub="مركز أعمال / اسطنبول" data-tr-desc="Finans merkezinde Leed Gold sertifikalı, yüksek teknolojik A+ ofis projesi." data-en-desc="Leed Gold certified, high-tech A+ office project in the financial center." data-ar-desc="مشروع مكاتب مرقّي من الفئة A+ حاصل على شهادة Leed Gold في المركز المالي.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje12.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">İş Merkezi / İstanbul</span>
+                            <h3>OFİS TASARIMLARI</h3>
+                            <p class="p-desc">Modern çalışma anlayışına uygun olarak tasarlanan ofis alanları, estetik detayları ve fonksiyonel çözümleriyle verimli bir iş ortamı sunuyor. Kurumsal kimliği yansıtan mimari yaklaşım, konfor ve prestiji bir araya getiriyor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Malikane / Sapanca" data-en-sub="Mansion / Sapanca" data-ar-sub="قصر / سابانجا" data-tr-desc="Göl kıyısında, kış bahçeli ve geniş botanik alanlı müstakil lüks yaşam." data-en-desc="Detached luxury living with a winter garden and large botanical area by the lake." data-ar-desc="حياة فاخرة منفصلة مع حديقة شتوية ومنطقة نباتية واسعة بجوار البحيرة.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje13.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Kumluca / Antlalya</span>
+                            <h3>ÖZEL VİLLA PROJELERİ</h3>
+                            <p class="p-desc">Çağdaş mimari çizgiler, geniş yaşam alanları ve özenle tasarlanmış dış mekân detaylarıyla modern villa projeleri; estetik, konfor ve ayrıcalıklı yaşam anlayışını bir araya getiriyor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Kıyı Evleri / İzmir" data-en-sub="Coastal Houses / Izmir" data-ar-sub="بيот ساحلية / إزمير" data-tr-desc="Mavişehir sahil hattında, panoramik körfez manzaralı akıllı cam mimari." data-en-desc="Smart glass architecture with panoramic bay views on Mavisehir coastline." data-ar-desc="عمارة زجاجية ذكية بإطلالات بانورامية على الخليج على خط ساحل مافي شهير.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje14.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Menderes / İzmir</span>
+                            <h3>Rota Life 3</h3>
+                            <p class="p-desc">Geniş peyzaj alanları, çocuk oyun parkları, spor sahaları ve özel havuzlu villalarıyla Rota Life 3, yaşam kalitesini artıran modern bir konut projesi olarak öne çıkıyor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tr-sub="Penthouse / Adana" data-en-sub="Penthouse / Adana" data-ar-sub="بنتهاوس / أضنة" data-tr-desc="Seyhan gölü manzaralı, helikopter pistli ve özel asansörlü teras saraylar." data-en-desc="Terrace palaces with Seyhan lake view, helipad and private elevator." data-ar-desc="قصور تراس مطلة على بحيرة سيهان مع مهبط طائرات هليكوبتر ومصعد خاص.">
+                        <div class="project-img-wrapper"><img src="/resimler/proje15.png"></div>
+                        <div class="project-info">
+                            <span class="p-sub">Güzelbahçe / İzmir</span>
+                            <h3>Taş Konut Tasarımları</h3>
+                            <p class="p-desc">Ferah yaşam alanları, doğal taş detayları ve modern mimari çizgileriyle tasarlanan proje, şehir yaşamının konforunu doğanın huzuruyla buluşturuyor.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-btn next" id="nextBtn">⟫</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision">
+        <div class="container">
+            <div class="section-title">
+                <p data-key="visionPre">Gelecek Projeksiyonu</p>
+                <h2 data-key="visionTitle">Değerlerimiz</h2>
+            </div>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <h3 data-key="v1Title">Sürdürülebilir Lüks</h3>
+                    <p data-key="v1Desc">Premium yaşam alanları inşa ederken doğaya saygı duymayı unutmuyoruz. Ekolojik dengeyi koruyan yeşil bina sertifikalı projelere imza atıyoruz.</p>
+                </div>
+                <div class="vision-card">
+                    <h3 data-key="v2Title">Kusursuz Mühendislik</h3>
+                    <p data-key="v2Desc">Estetiğin altındaki görünmez güce odaklanıyoruz. En son teknoloji deprem güvenliği ve yüksek dayanımlı yapı elemanları standardımızdır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <p data-key="contactPre">Bizimle İletişime Geçin</p>
+                <h2 data-key="contactTitle">Özel Danışmanlık</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <input type="text" id="formName" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="formEmail" placeholder="E-Posta Adresiniz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="formPhone" placeholder="Telefon Numaranız">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="formMessage" placeholder="Mesajınız ve İlgilendiğiniz Proje" rows="5" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-gold" data-key="contactBtn">Talep Gönder</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-info-wrapper">
+                    <div class="info-item">
+                        <h4 data-key="infoOffice">Merkez Ofis</h4>
+                        <p data-key="infoAddress">Evka 3, 129/12. Sk. No:14, 35050 Bornova/İzmir</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-key="infoContactTitle">Telefon & İletişim</h4>
+                        <p>+90 (553) 560 35 42</p>
+                        <p>info@adastrayapi.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-key="infoHours">Çalışma Saatleri</h4>
+                        <p id="infoWeekdays">Hafta İçi: 09:00 - 18:00</p>
+                        <p id="infoSaturday">Cumartesi: 10:00 - 15:00</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Evka%203,%20129/12.%20Sk.%20No:14,%2035050%20Bornova/%C4%B0zmir&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo" style="margin-bottom: 20px;">
+                        <span class="main-logo" style="color: white;">AD ASTRA</span>
+                        <span class="sub-logo" data-key="subLogo">YAPI / ARCHITECTURE</span>
+                    </a>
+                    <p data-key="footerDesc">Ad Astra Yapı bir elit yaşam markasıdır. Estetik, konfor ve yüksek yatırım değerini tek bir potada eritiyoruz.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-key="footerCol1">Kurumsal</h4>
+                    <ul>
+                        <li><a href="#about" data-key="navAbout">Hakkımızda</a></li>
+                        <li><a href="#projects" data-key="navProjects">Projelerimiz</a></li>
+                        <li><a href="#vision" data-key="navVision">Vizyon & Misyon</a></li>
+                        <li><a href="#" data-key="footerCareer">Kariyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-key="footerCol2">Yasal</h4>
+                    <ul>
+                        <li><a href="#" data-key="fLink1">KVKK Aydınlatma Metni</a></li>
+                        <li><a href="#" data-key="fLink2">Gizlilik Politikası</a></li>
+                        <li><a href="#" data-key="fLink3">Kullanım Şartları</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" id="copyrightText">
+                © 2026 Ad Astra Yapı. Tüm Hakları Saklıdır. "Tasarım Ve Yazılım: Hüseyin Uyanık"
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            tr: {
+                subLogo: "YAPI / ARCHITECTURE",
+                navHome: "Ana Sayfa", navAbout: "Kurumsal", navProjects: "Projelerimiz", navVision: "Vizyon", navContact: "İletişim",
+                headerConnectBtn: "İletişime Geç",
+                heroSubtitle: "Yıldızlara Doğru Mimari Öyküler",
+                heroTitle: "Geleceğin Yaşam Alanlarını <span>İnşa Ediyoruz</span>",
+                heroDesc: "Ad Astra Yapı, lüksün ve estetiğin mükemmel uyumuyla sadece yapılar değil, nesiller boyu değerini koruyacak prestijli yaşam sanatı alanları tasarlar.",
+                heroBtn: "Koleksiyonu Keşfet",
+                aboutPre: "Biz Kimiz?", aboutTitle: "Zamana Meydan Okuyan Silüetler",
+                aboutP1: "Çeyrek asırlık köklü geçmişimizle, \"Ad Astra\" prensibini kendimize kılavuz edindik. Mimaride kusursuz işçilik, elit materyal seçimi ve evrensel mühendislik standartlarını bir araya getiriyoruz.",
+                aboutP2: "Her projemizde, beyazın saflığını ve altının asaletini mimari çizgilerimize işleyerek, premium bir yaşam deneyiminin kapılarını aralıyoruz.",
+                aboutBtn: "Kurumsal Bilgi Al",
+                projectsPre: "Seçkin Portföyümüz", projectsTitle: "Projelerimiz",
+                visionPre: "Gelecek Projeksiyonu", visionTitle: "Değerlerimiz",
+                v1Title: "Sürdürülebilir Lüks", v1Desc: "Premium yaşam alanları inşa ederken doğaya saygı duymayı unutmuyoruz. Ekolojik dengeyi koruyan yeşil bina sertifikalı projelere imza atıyoruz.",
+                v2Title: "Kusursuz Mühendislik", v2Desc: "Estetiğin altındaki görünmez güce odaklanıyoruz. En son teknoloji deprem güvenliği ve yüksek dayanımlı yapı elemanları standardımızdır.",
+                contactPre: "Bizimle İletişime Geçin", contactTitle: "Özel Danışmanlık", contactBtn: "Talep Gönder",
+                formName: "Adınız Soyadınız", formEmail: "E-Posta Adresiniz", formPhone: "Telefon Numaranız", formMessage: "Mesajınız ve İlgilendiğiniz Proje",
+                infoOffice: "Merkez Ofis", infoAddress: "Evka 3, 129/12. Sk. No:14, 35050 Bornova/İzmir",
+                infoContactTitle: "Telefon & İletişim", infoHours: "Çalışma Saatleri",
+                infoWeekdays: "Hafta İçi: 09:00 - 18:00", infoSaturday: "Cumartesi: 10:00 - 15:00",
+                footerDesc: "Ad Astra Yapı bir elit yaşam markasıdır. Estetik, konfor ve yüksek yatırım değerini tek bir potada eritiyoruz.",
+                footerCol1: "Kurumsal", footerCol2: "Yasal", footerCareer: "Kariyer",
+                fLink1: "KVKK Aydınlatma Metni", fLink2: "Gizlilik Politikası", fLink3: "Kullanım Şartları",
+                copyright: '© 2026 Ad Astra Yapı. Tüm Hakları Saklıdır. "Tasarım Ve Yazılım: Hüseyin Uyanık"'
+            },
+            en: {
+                subLogo: "CONSTRUCTION / ARCHITECTURE",
+                navHome: "Home", navAbout: "Corporate", navProjects: "Our Projects", navVision: "Vision", navContact: "Contact",
+                headerConnectBtn: "Get In Touch",
+                heroSubtitle: "Architectural Stories Towards the Stars",
+                heroTitle: "We Build the <span>Living Spaces</span> of Future",
+                heroDesc: "Ad Astra Yapı designs prestigious spaces of living art that will preserve their value for generations, with the perfect harmony of luxury and aesthetics.",
+                heroBtn: "Discover Collection",
+                aboutPre: "Who We Are?", aboutTitle: "Time-Defying Silhouettes",
+                aboutP1: "With our deep-rooted history of a quarter century, we have guided ourselves by the \"Ad Astra\" principle. We bring together perfect craftsmanship in architecture, elite material selection and universal engineering standards.",
+                aboutP2: "In each project, we open the doors of a premium living experience by processing the purity of white and the nobility of gold into our architectural lines.",
+                aboutBtn: "Get Corporate Info",
+                projectsPre: "Our Distinguished Portfolio", projectsTitle: "Projects",
+                visionPre: "Future Projection", visionTitle: "Our Values",
+                v1Title: "Sustainable Luxury", v1Desc: "While building premium living spaces, we do not forget to respect nature. We sign green building certified projects that protect ecological balance.",
+                v2Title: "Flawless Engineering", v2Desc: "We focus on the invisible power beneath aesthetics. Latest technology earthquake safety and high resistance structural elements are our standards.",
+                contactPre: "Get In Touch With Us", contactTitle: "Special Consultation", contactBtn: "Submit Request",
+                formName: "Your Full Name", formEmail: "Your E-Mail Address", formPhone: "Your Phone Number", formMessage: "Your Message and Project of Interest",
+                infoOffice: "Head Office", infoAddress: "Evka 3, 129/12. St. No:14, 35050 Bornova/Izmir",
+                infoContactTitle: "Phone & Contact", infoHours: "Working Hours",
+                infoWeekdays: "Weekdays: 09:00 - 18:00", infoSaturday: "Saturday: 10:00 - 15:00",
+                footerDesc: "Ad Astra Yapı is an elite lifestyle brand. We melt aesthetics, comfort and high investment value in a single pot.",
+                footerCol1: "Corporate", footerCol2: "Legal", footerCareer: "Career",
+                fLink1: "Clarification Text on KVKK", fLink2: "Privacy Policy", fLink3: "Terms of Use",
+                copyright: '© 2026 Ad Astra Yapı. All Rights Reserved. "Design & Software: Hüseyin Uyanık"'
+            },
+            ar: {
+                subLogo: "بناء / هندسة معمارية",
+                navHome: "الصفحة الرئيسية", navAbout: "الشركة", navProjects: "مشاريعنا", navVision: "رؤيتنا", navContact: "اتصل بنا",
+                headerConnectBtn: "تواصل معنا",
+                heroSubtitle: "قصص معمارية نحو النجوم",
+                heroTitle: "نحن نبني <span>مساحات المعيشة</span> للمستقبل",
+                heroDesc: "تصمم أد أسترا يابي مساحات مرموقة من الفن الحي الذي سيحافظ على قيمته لأجيال، مع التناغم المثالي بين الفخامة والجماليات.",
+                heroBtn: "اكتشف المجموعة",
+                aboutPre: "من نحن؟", aboutTitle: "الصور الظلية التي تتحدى الزمن",
+                aboutP1: "مع تاريخنا الراسخ الممتد لربع قرن، استرشدنا بمبدأ \"أد أسترا\". نحن نجمع بين الحرفية المثالية في الهندسة المعمارية واختيار المواد النخبوية والمعايير الهندسية العالمية.",
+                aboutP2: "في كل مشروع، نفتح أبواب تجربة معيشية متميزة من خلال معالجة نقاء اللون الأبيض ونبل الذهب في خطوطنا المعمارية.",
+                aboutBtn: "احصل على معلومات الشركة",
+                projectsPre: "محفظتنا المتميزة", projectsTitle: "مشاريعنا",
+                visionPre: "التوقعات المستقبلية", visionTitle: "قيمنا",
+                v1Title: "فخامة مستدامة", v1Desc: "أثناء بناء مساحات معيشة متميزة، لا ننسى احترام الطبيعة. نحن نوقع على المشاريع المعتمدة للمباني الخضراء التي تحمي التوازن البيئي.",
+                v2Title: "هندسة لا تشوبها شائبة", v2Desc: "نحن نركز على القوة غير المرئية تحت الجماليات. أحدث تقنيات السلامة من الزلازل والعناصر الهيكلية عالية المقاومة هي معاييرنا.",
+                contactPre: "تواصل معنا", contactTitle: "استشارة خاصة", contactBtn: "إرسال الطلب",
+                formName: "اسمك الكامل", formEmail: "عنوان بريدك الإلكتروني", formPhone: "رقم هاتفك", formMessage: "رسالتك والمشروع الذي تهمك به",
+                infoOffice: "المكتب الرئيسي", infoAddress: "إيفكا 3، شارع 129/12 رقم: 14، 35050 بورنوفا/إزمير",
+                infoContactTitle: "الهاتف والاتصال", infoHours: "ساعات العمل",
+                infoWeekdays: "أيام الأسبوع: 09:00 - 18:00", infoSaturday: "السبت: 10:00 - 15:00",
+                footerDesc: "أد أسترا يابي هي علامة تجارية متميزة لأسلوب الحياة. نحن نذوب الجمال والراحة والقيمة الاستثمارية العالية في وعاء واحد.",
+                footerCol1: "الشركة", footerCol2: "قانوني", footerCareer: "وظائف",
+                fLink1: "نص التوضيح بشأن KVKK", fLink2: "سياسة الخصوصية", fLink3: "شروط الاستخدام",
+                copyright: '© 2026 أد أسترا يابي. كل الحقوق محفوظة. "التصميم والبرمجيات: حسين أويانيك"'
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById('currentLangBtn').innerText = lang.toUpperCase() + " ▼";
+            
+            if(lang === 'ar') {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.removeAttribute('dir');
+            }
+
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    elem.innerText = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                const subElem = card.querySelector('.p-sub');
+                const descElem = card.querySelector('.p-desc');
+                
+                const translatedSub = card.getAttribute(`data-${lang}-sub`);
+                const translatedDesc = card.getAttribute(`data-${lang}-desc`);
+                
+                if (subElem && translatedSub) subElem.innerText = translatedSub;
+                if (descElem && translatedDesc) descElem.innerText = translatedDesc;
+            });
+
+            if(lang === 'tr') {
+                document.getElementById('heroTitle').innerHTML = "Geleceğin Yaşam Alanlarını <span>İnşa Ediyoruz</span>";
+            } else if(lang === 'en') {
+                document.getElementById('heroTitle').innerHTML = "We Build the <span>Living Spaces</span> of Future";
+            } else if(lang === 'ar') {
+                document.getElementById('heroTitle').innerHTML = "نحن نبني <span>مساحات المعيشة</span> للمستقبل";
+            }
+
+            document.getElementById('formName').placeholder = translations[lang].formName;
+            document.getElementById('formEmail').placeholder = translations[lang].formEmail;
+            document.getElementById('formPhone').placeholder = translations[lang].formPhone;
+            document.getElementById('formMessage').placeholder = translations[lang].formMessage;
+
+            document.getElementById('infoWeekdays').innerText = translations[lang].infoWeekdays;
+            document.getElementById('infoSaturday').innerText = translations[lang].infoSaturday;
+            document.getElementById('copyrightText').innerHTML = translations[lang].copyright;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            /* --- Scroll Spy --- */
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            const options = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            /* --- Carousel Dinamiği (ID'ler ayrıştırıldı ve düzeltildi) --- */
+            const carousel = document.getElementById('projectCarousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            const getScrollAmount = () => {
+                const card = document.querySelector('.project-card');
+                if (card) {
+                    return card.getBoundingClientRect().width + 30; 
+                }
+                return 350;
+            };
+
+            if (nextBtn && carousel) {
+                nextBtn.addEventListener('click', () => {
+                    const directionMultiplier = document.body.getAttribute('dir') === 'rtl' ? -1 : 1;
+                    carousel.scrollBy({ left: getScrollAmount() * directionMultiplier, behavior: 'smooth' });
+                });
+            }
+
+            if (prevBtn && carousel) {
+                prevBtn.addEventListener('click', () => {
+                    const directionMultiplier = document.body.getAttribute('dir') === 'rtl' ? -1 : 1;
+                    carousel.scrollBy({ left: -getScrollAmount() * directionMultiplier, behavior: 'smooth' });
+                });
+            }
+
+            /* --- WhatsApp Entegrasyonu --- */
+            const companyPhone = "905535603542";
+
+            function openWhatsApp(messageText) {
+                const encodedText = encodeURIComponent(messageText);
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${companyPhone}&text=${encodedText}`;
+                window.open(whatsappUrl, '_blank');
+            }
+
+            const headerWhatsappBtn = document.getElementById('headerWhatsappBtn');
+            if (headerWhatsappBtn) {
+                headerWhatsappBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openWhatsApp("*Ad Astra Yapı* - Merhaba, web siteniz üzerinden ulaşıyorum. Projeleriniz hakkında bilgi alabilir miyim?");
+                });
+            }
+
+            const whatsappForm = document.getElementById('whatsappForm');
+            if (whatsappForm) {
+                whatsappForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('formName').value;
+                    const email = document.getElementById('formEmail').value;
+                    const phone = document.getElementById('formPhone').value || 'Belirtilmedi';
+                    const message = document.getElementById('formMessage').value;
+
+                    const textTemplate = `*Ad Astra Yapı - Yeni Bilgi Talebi*\n\n` +
+                                         `*Ad Soyad:* ${name}\n` +
+                                         `*E-Posta:* ${email}\n` +
+                                         `*Telefon:* ${phone}\n\n` +
+                                         `*Mesaj / İlgilenilen Proje:*\n${message}`;
+
+                    openWhatsApp(textTemplate);
+                });
+            }
+        });
+    </script></body></html>
+
+```
