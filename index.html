@@ -427,10 +427,13 @@
         .project-carousel {
             display: flex;
             gap: 30px;
-            overflow-x: hidden;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
             padding: 20px 0;
             scrollbar-width: none;
+            touch-action: pan-x;
+            cursor: grab;
         }
 
         .project-carousel::-webkit-scrollbar {
@@ -709,8 +712,8 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
-            .carousel-btn.prev { left: -10px; }
-            .carousel-btn.next { right: -10px; }
+            .carousel-btn.prev { left: 5px; }
+            .carousel-btn.next { right: 5px; }
         }
 
         @media (max-width: 600px) {
@@ -718,8 +721,14 @@
                 flex: 0 0 100%;
             }
             .carousel-btn {
-                display: none;
+                display: flex;
+                width: 42px;
+                height: 42px;
+                font-size: 1rem;
+                top: 45%;
             }
+            .carousel-btn.prev { left: 5px; }
+            .carousel-btn.next { right: 5px; }
         }
         @media(max-width:768px){
 
