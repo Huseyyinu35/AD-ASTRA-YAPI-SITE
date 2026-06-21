@@ -687,10 +687,31 @@
         }
 
         /* --- Responsive Tasarım --- */
-        @media (max-width: 1200px) {
-            .nav-container {
-                grid-template-columns: auto 1fr;
-            }
+       /* YENİ VE DÜZELTİLMİŞ YAPI */
+@media (max-width: 1200px) {
+    .nav-container { 
+        grid-template-columns: auto 1fr; 
+    }
+
+    /* Mail adresini gizle, sadece buton kalsın */
+    .header-email { 
+        display: none; 
+    }
+
+    /* header-right'ı gizlemek yerine sadece daraltalım */
+    .header-right {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Buradaki diğer grid ayarların kalsın, sadece üstteki header-right düzeltmesi yeterli */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
             .header-right {
                 display: none;
             }
